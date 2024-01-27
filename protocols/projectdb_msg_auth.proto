@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "projectdb_struct.proto";
+
+option java_multiple_files = true;
+option java_package = "com.projectdb.protocol.msg.auth";
+option java_outer_classname = "AuthModel";
+
+////////////////////////////////////////////////
+// protocols
+////////////////////////////////////////////////
+
+service AuthService {
+    rpc login(ReqLogin) returns (ResLogin);
+}
+
+message ReqLogin {
+    string username = 1;
+    string password = 2;
+}
+
+message ResLogin {
+    Response response = 1;
+    string token = 2;
+    string user_id = 3;
+}

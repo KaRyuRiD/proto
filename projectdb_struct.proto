@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "projectdb_enum.proto";
+
+option java_multiple_files = true;
+option java_package = "com.projectdb.protocol.vo";
+option java_outer_classname = "StructModel";
+
+//
+message Response {
+    ResultCode code = 1;
+    string msg = 2;
+}
+
+////////////////////////////////////////////////
+// vo
+////////////////////////////////////////////////
+
+message Location {
+    int32 x = 1;
+    int32 y = 2;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.projectdb.protocol.enumvo";
+option java_outer_classname = "EnumModel";
+
+enum ResultCode {
+    rc_success = 0;
+    rc_fail = 10000;
+}
+
+enum CommandDefinition {
+    COMMAND_NONE = 0;
+
+    COMMAND_COMMON_HEARTBEAT = 1;
+    COMMAND_COMMON_REGISTRYSOCKET = 2;
+
+    COMMAND_AUTH_REQLOGIN = 100;
+    COMMAND_AUTH_RESLOGIN = 101;
+
+    COMMAND_LOCATION_REQCHANGELOCATION = 1000;
+    COMMAND_LOCATION_RESCHANGELOCATION = 1001;
+}
