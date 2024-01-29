@@ -1,9 +1,10 @@
 syntax = "proto3";
 
 import "projectdb_struct.proto";
+import "projectdb_enum.proto";
 
 option java_multiple_files = true;
-option java_package = "com.projectdb.protocol.msg.auth";
+option java_package = "com.projectdb.generate.msg.auth";
 option java_outer_classname = "AuthModel";
 
 ////////////////////////////////////////////////
@@ -11,16 +12,34 @@ option java_outer_classname = "AuthModel";
 ////////////////////////////////////////////////
 
 service AuthService {
-    rpc login(ReqLogin) returns (ResLogin);
+    rpc login(ReqAuthAccountLogin) returns (ResAuthAccountLogin);
 }
 
-message ReqLogin {
-    string username = 1;
-    string password = 2;
+// 계정로그인
+message ReqAuthAccountLogin {
+    AccountTypeInfo account_type_info = 1;
 }
-
-message ResLogin {
+message ResAuthAccountLogin {
     Response response = 1;
-    string token = 2;
-    string user_id = 3;
+    string user_id = 2;
+    string token = 3;
+    UserInfo user_info = 4;
+}
+
+// 계정등록
+message ReqAuthAccountRegistry {
+    AccountTypeInfo account_type_info = 1;
+}
+message ResAuthAccountRegistry {
+    Response response = 1;
+    string user_id = 2;
+}
+
+// 유저이름 생성
+message ReqAuthUserNameCreate {
+    string user_id = 1;
+    string nickname = 2;
+}
+message ResAuthUserNameCreate {
+    Response response = 1;
 }

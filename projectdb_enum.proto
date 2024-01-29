@@ -1,23 +1,45 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.projectdb.protocol.enumvo";
+option java_package = "com.projectdb.generate.enumvo";
 option java_outer_classname = "EnumModel";
 
+// 응답코드
 enum ResultCode {
-    rc_success = 0;
-    rc_fail = 10000;
+    rc_fail = 0;
+    rc_success = 1;
 }
 
+// 계정타입
+enum AccountType {
+    at_none = 0;
+    at_email = 1;
+}
+
+// 아이템타입
+enum ItemType {
+    it_none = 0;
+    it_gold = 1;
+    it_diamond = 2;
+}
+
+// 프로토콜 메시지 타입 정리
 enum CommandDefinition {
-    COMMAND_NONE = 0;
+    command_none = 0;
 
-    COMMAND_COMMON_HEARTBEAT = 1;
-    COMMAND_COMMON_REGISTRYSOCKET = 2;
+    // common
+    command_common_heartbeat = 1;
+    command_common_registrysocket = 2;
 
-    COMMAND_AUTH_REQLOGIN = 100;
-    COMMAND_AUTH_RESLOGIN = 101;
+    // auth
+    command_auth_reqauthaccountlogin = 100;
+    command_auth_resauthaccountlogin = 101;
+    command_auth_reqauthaccountregistry = 102;
+    command_auth_resauthaccountregistry = 103;
+    command_auth_reqauthusernamecreate = 104;
+    command_auth_resauthusernamecreate = 105;
 
-    COMMAND_LOCATION_REQCHANGELOCATION = 1000;
-    COMMAND_LOCATION_RESCHANGELOCATION = 1001;
+    // location
+    command_location_reqchangelocation = 1000;
+    command_location_reschangelocation = 1001;
 }
