@@ -6,10 +6,13 @@ option java_multiple_files = true;
 option java_package = "com.projectdb.generate.vo";
 option java_outer_classname = "StructModel";
 
-//
-message Response {
-    ResultCode code = 1;
-    string msg = 2;
+/////////////
+// error msg
+/////////////
+
+message ErrorMsg {
+    ResponseCode response_code = 1;
+    string error_msg = 2;
 }
 
 ////////////////////////////////////////////////
@@ -24,19 +27,20 @@ message Location {
 // 계정타입정보
 message AccountTypeInfo {
     AccountType account_type = 1;
-    string account_type_name = 2;
+    string account_name = 2;
 }
 
 // 계정정보
 message AccountInfo {
     string user_id = 1;
-    repeated AccountTypeInfo account_type_info = 2;
+    repeated AccountTypeInfo account_type_infos = 2;
+    int64 registry_timemillis = 3;
+    string user_name = 4;
 }
 
 // 유저정보
 message UserInfo {
     string user_id = 1;
-    string user_name = 2;
 
     // 아이템, 유저의 글로벌로 저장할 수 있는 데이터
 }

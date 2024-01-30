@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "projectdb_struct.proto";
+import "projectdb_enum.proto";
 
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.msg.location";
@@ -20,5 +21,5 @@ message ReqChangeLocation {
     Location location = 2;
 }
 message ResChangeLocation {
-    Response response = 1;
+    ResponseCode response_code = 1;
 }
