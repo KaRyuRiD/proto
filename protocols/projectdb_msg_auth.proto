@@ -21,8 +21,8 @@ message ReqAuthAccountLogin {
 }
 message ResAuthAccountLogin {
     ResponseCode response_code = 1;
-    string token = 2;
-    AccountInfo account_info = 3;
+    AccountInfo account_info = 2;
+    string token = 3;
 }
 
 // 계정등록
@@ -41,4 +41,5 @@ message ReqAuthUserNameCreate {
 }
 message ResAuthUserNameCreate {
     ResponseCode response_code = 1;
+    string user_id = 2;
 }

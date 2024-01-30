@@ -42,8 +42,9 @@ enum CommandDefinition {
     command_none = 0;
 
     // common
-    command_common_heartbeat = 1;
-    command_common_registrysocket = 2;
+    command_common_responseinfo = 1;
+    command_common_heartbeat = 2;
+    command_common_registrysocket = 3;
 
     // auth
     command_auth_reqauthaccountlogin = 100;

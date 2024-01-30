@@ -22,4 +22,5 @@ message ReqChangeLocation {
 }
 message ResChangeLocation {
     ResponseCode response_code = 1;
+    string user_id = 2;
 }

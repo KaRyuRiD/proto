@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "projectdb_struct.proto";
+import "projectdb_enum.proto";
+
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.msg.common";
 option java_outer_classname = "CommonModel";
@@ -20,4 +23,9 @@ message HeartBeat {
 message RegistrySocket {
     string name = 1;
     string hostname = 2;
+}
+
+message ResponseInfo {
+    string user_id = 1;
+    ResponseCode res_code = 2;
 }
