@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.projectdb.generate.enumvo";
+option java_outer_classname = "EnumCommonModel";
+
+// 계정타입
+enum AccountType {
+    at_none = 0;
+    at_email = 1; // 이메일 계정
+}
+
+// 아이템타입
+enum ItemType {
+    it_none = 0;
+    it_asset = 1; // 재화
+    it_consumable = 2; // 소모품
+}

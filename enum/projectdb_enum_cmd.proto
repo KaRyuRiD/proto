@@ -2,40 +2,7 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.enumvo";
-option java_outer_classname = "EnumModel";
-
-// 계정타입
-enum AccountType {
-    at_none = 0;
-    at_email = 1;
-}
-
-// 아이템타입
-enum ItemType {
-    it_none = 0;
-    it_gold = 1;
-    it_diamond = 2;
-}
-
-// 응답코드
-// 1 - 100 까지는 internal error
-// 100 성공
-// 1000 이후로는 각 서비스별로 정의
-enum ResponseCode {
-    rc_fail = 0;
-    rc_db_error = 1;
-    rc_invalid_parameter = 2;
-    rc_internal_error = 3;
-
-    // 성공
-    rc_success = 100;
-
-    // auth
-    rc_account_already_exist = 1000;
-    rc_nickname_already_exist = 1001;
-    rc_account_not_exist = 1002;
-
-}
+option java_outer_classname = "EnumCmdModel";
 
 // 프로토콜 메시지 타입 정리
 enum CommandDefinition {
@@ -57,4 +24,9 @@ enum CommandDefinition {
     // location
     command_location_reqchangelocation = 1000;
     command_location_reschangelocation = 1001;
+
+    // item
+    command_item_reqitemgetiteminfo = 2000;
+    command_item_resitemgetiteminfo = 2001;
+
 }

@@ -1,10 +1,11 @@
 syntax = "proto3";
 
-import "projectdb_enum.proto";
+import "enum/projectdb_enum_common.proto";
+import "enum/projectdb_enum_rescode.proto";
 
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.vo";
-option java_outer_classname = "StructModel";
+option java_outer_classname = "StructCommonModel";
 
 /////////////
 // error msg
@@ -32,17 +33,23 @@ message AccountTypeInfo {
 
 // 계정정보
 message AccountInfo {
-    string user_id = 1;
-    repeated AccountTypeInfo account_type_infos = 2;
-    int64 registry_timemillis = 3;
-    string user_name = 4;
+    string user_id = 1; // 유저아이디
+    repeated AccountTypeInfo account_type_infos = 2; // 계정타입정보
+    int64 registry_timemillis = 3; // 계정생성시간
+    string user_name = 4; // 유저이름
+
+    // 
+    string device_id = 10; // 디바이스 아이디
+    int64 last_login_timemillis = 11; // 마지막으로 로그인한 시간
+    int64 heartbeat_timemillis = 12; // 마지막으로 서버에 접속한 시간
 }
 
 // 유저정보
 message UserInfo {
-    string user_id = 1;
+    string user_id = 1; // 유저아이디
 
-    // 아이템, 유저의 글로벌로 저장할 수 있는 데이터
+    // 유저정보
+    int32 level = 10;
 }
 
 // 아이템정보

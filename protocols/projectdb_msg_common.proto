@@ -1,7 +1,6 @@
 syntax = "proto3";
 
-import "projectdb_struct.proto";
-import "projectdb_enum.proto";
+import "enum/projectdb_enum_rescode.proto";
 
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.msg.common";
@@ -10,11 +9,6 @@ option java_outer_classname = "CommonModel";
 ////////////////////////////////////////////////
 // protocols
 ////////////////////////////////////////////////
-
-service CommonService {
-    rpc heartBeat(HeartBeat) returns (HeartBeat);
-    rpc registrySocket(RegistrySocket) returns (RegistrySocket);
-}
 
 message HeartBeat {
     int32 hit = 1;
