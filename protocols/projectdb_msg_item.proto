@@ -13,11 +13,14 @@ option java_outer_classname = "ItemModel";
 
 // 아이템정보 요청
 message ReqItemGetItemInfo {
-    AccountTypeInfo account_type_info = 1;
+    // server에서 채워주는값.
+    UserInfo user_info = 100; // 사용자정보
 }
 message ResItemGetItemInfo {
-    ResponseCode response_code = 1; // 응답코드
+    // 응답코드
+    ResponseCode response_code = 10; // 응답코드
+    repeated ItemInfo item_infos = 11; // 아이템정보
 
-    // 
-    repeated ItemInfo item_infos = 10; // 아이템정보
+    // server에서 채워주는값.
+    UserInfo user_info = 100; // 사용자정보
 }

@@ -17,9 +17,10 @@ message ReqAuthAccountLogin {
 }
 message ResAuthAccountLogin {
     ResponseCode response_code = 1; // 응답코드
-    int64 session_id = 2; // 세션아이디
-    AccountInfo account_info = 3; // 계정정보
-    UserInfo user_info = 4; // 유저정보
+
+    AccountInfo res_account_info = 2; // 계정정보
+    int64 res_session_id = 3; // 세션아이디
+    UserInfo res_user_info = 4; // 유저정보
 }
 
 // 계정등록

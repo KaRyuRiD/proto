@@ -15,7 +15,14 @@ message ReqChangeLocation {
     // req
     string user_id = 1;
     Location location = 2;
+
+    // server에서 채워주는값.
+    UserInfo user_info = 100; // 사용자정보
 }
 message ResChangeLocation {
+    // res
     ResponseCode response_code = 1;
+
+    // server에서 채워주는값.
+    UserInfo user_info = 100; // 사용자정보
 }

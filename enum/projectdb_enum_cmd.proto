@@ -29,4 +29,7 @@ enum CommandDefinition {
     command_item_reqitemgetiteminfo = 2000;
     command_item_resitemgetiteminfo = 2001;
 
+
+    // s to s
+    command_stos_reqitemnewaccountrewards = 10000;
 }

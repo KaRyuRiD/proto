@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "struct/projectdb_struct_common.proto";
+import "enum/projectdb_enum_rescode.proto";
+
+option java_multiple_files = true;
+option java_package = "com.projectdb.generate.msg.stos";
+option java_outer_classname = "ServerToServerModel";
+
+////////////////////////////////////////////////
+// protocols
+////////////////////////////////////////////////
+
+// command_stos_reqitemnewaccountrewards
+message ReqItemNewAccountRewards {
+    // req
+    string user_id = 1;
+}
