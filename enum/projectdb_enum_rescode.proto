@@ -22,5 +22,6 @@ enum ResponseCode {
     rc_nickname_already_exist = 1001;
     rc_account_not_exist = 1002;
     rc_account_not_login = 1003;
+    rc_session_not_valid = 1004;
 
 }

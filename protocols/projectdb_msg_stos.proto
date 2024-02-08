@@ -11,8 +11,9 @@ option java_outer_classname = "ServerToServerModel";
 // protocols
 ////////////////////////////////////////////////
 
-// command_stos_reqitemnewaccountrewards
-message ReqItemNewAccountRewards {
+// 최초 계정 생성 시 사용자 정보를 등록한다.
+// command_stos_newaccountregister
+message NewAccountRegister {
     // req
     string user_id = 1;
 }

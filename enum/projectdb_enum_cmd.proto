@@ -31,5 +31,5 @@ enum CommandDefinition {
 
 
     // s to s
-    command_stos_reqitemnewaccountrewards = 10000;
+    command_stos_newaccountregister = 10000;
 }

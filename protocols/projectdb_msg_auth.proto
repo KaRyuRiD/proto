@@ -26,18 +26,9 @@ message ResAuthAccountLogin {
 // 계정등록
 message ReqAuthAccountRegistry {
     AccountTypeInfo account_type_info = 1;
+    string user_name = 2;
 }
 message ResAuthAccountRegistry {
-    ResponseCode response_code = 1;
-    string user_id = 2;
-}
-
-// 유저이름 생성
-message ReqAuthUserNameCreate {
-    string user_id = 1;
-    string nickname = 2;
-}
-message ResAuthUserNameCreate {
     ResponseCode response_code = 1;
     string user_id = 2;
 }
