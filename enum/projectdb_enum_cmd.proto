@@ -9,9 +9,7 @@ enum CommandDefinition {
     command_none = 0;
 
     // common
-    command_common_responseinfo = 1;
     command_common_heartbeat = 2;
-    command_common_registrysocket = 3;
 
     // auth
     command_auth_reqauthaccountlogin = 100;
@@ -21,15 +19,24 @@ enum CommandDefinition {
     command_auth_reqauthusernamecreate = 104;
     command_auth_resauthusernamecreate = 105;
 
-    // location
-    command_location_reqchangelocation = 1000;
-    command_location_reschangelocation = 1001;
-
     // item
-    command_item_reqitemgetiteminfo = 2000;
-    command_item_resitemgetiteminfo = 2001;
+    command_item_reqitemgetiteminfo = 1000;
+    command_item_resitemgetiteminfo = 1001;
 
+    // quest
+    command_quest_reqquestinfo = 2000;
+    command_quest_resquestinfo = 2001;
 
+    // actor
+    command_actor_reqactorinfo = 3000;
+    command_actor_resactorinfo = 3001;
+
+    ////////////
     // s to s
+    ////////////
+    command_stos_registrysocket = 3;
+
+    // biz
     command_stos_newaccountregister = 10000;
+    command_stos_useractionlog = 10001;
 }

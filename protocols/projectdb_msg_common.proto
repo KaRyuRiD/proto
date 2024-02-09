@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "enum/projectdb_enum_rescode.proto";
-
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.msg.common";
 option java_outer_classname = "CommonModel";
@@ -12,14 +10,5 @@ option java_outer_classname = "CommonModel";
 
 message HeartBeat {
     int32 hit = 1;
-}
-
-message RegistrySocket {
-    string name = 1;
-    string hostname = 2;
-}
-
-message ResponseInfo {
-    string user_id = 1;
-    ResponseCode res_code = 2;
+    string user_id = 2;
 }

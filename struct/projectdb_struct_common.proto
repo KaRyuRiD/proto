@@ -58,3 +58,102 @@ message ItemInfo {
     string item_id = 2;
     int32 item_count = 3;
 }
+
+message QuestInfoGoalBased {
+    string user_id = 1;
+    QuestType quest_type = 2;
+
+    // 시작, 종료 시간
+    int64 start_timemillis = 3;
+    int64 end_timemillis = 4;
+
+    // 퀘스트 진행상태
+    repeated QuestDetailInfoGoalBased quest_detail_infos = 5;
+}
+
+// 달성형 퀘스트정보
+message QuestDetailInfoGoalBased {
+    // 퀘스트에 대한 정보
+    string quest_id = 1;
+    QuestType quest_type = 2;
+    string quest_sub_type = 3;
+    
+    // 퀘스트 진행상태
+    int32 number_of_progress = 4;
+    int32 number_of_goal = 5; // 0일 경우는 스크립트참조
+}
+
+// 시간기반 퀘스트정보
+message QuestDetailInfoTimeBased {
+    // 퀘스트에 대한 정보
+    string quest_id = 1;
+    QuestType quest_type = 2;
+    string quest_sub_type = 3;
+
+    // 퀘스트 진행상태
+    int64 target_timemillis = 4; // 목표시간
+    repeated string plus_ability_ids = 5; // 플러스 효과가 있는 능력치
+    repeated string minus_ability_ids = 6; // 마이너스 효과가 있는 능력치
+
+    // 해당퀘스트의 서포터 캐릭터 정보
+    repeated CharacterInfo supporter_characters = 7; // 해당퀘스트의 서포터 캐릭터 정보
+    // 해당퀘스트의 서포터 부하 정보
+    repeated CrewInfo supporter_crews = 8; // 해당퀘스트의 서포터 부하 정보
+
+    // 퀘스트만료시간
+    int64 expired_timemillis = 9;
+
+}
+
+// 캐릭터정보
+message CharacterInfo {
+    string character_id = 1;
+    int32 level = 2;
+
+    // 수치형 능력치
+    int32 ability_1 = 3; // 공격력
+    int32 ability_2 = 4; // 방어력
+    int32 ability_3 = 5; // 체력
+
+    // 기능형 능력치
+    repeated string ability_ids = 6; // 능력치아이디
+
+    // 보유자 아이디
+    string owner_user_id = 7;
+}
+
+// 부하정보
+message CrewInfo {
+    string crew_id = 1;
+    int32 level = 2;
+
+    // 수치형 능력치
+    int32 ability_1 = 3; // 공격력
+    int32 ability_2 = 4; // 방어력
+    int32 ability_3 = 5; // 체력
+
+    // 기능형 능력치
+    repeated string ability_ids = 6; // 능력치아이디
+
+    // 보유자 아이디
+    string owner_user_id = 7;
+}
+
+// 이력서정보
+message ResumeInfo {
+    string resume_uid = 1;
+    string resume_id = 2;
+    string owner_user_id = 3;
+
+    // 확정 보유 능력치아이디
+    repeated string confirmed_ability_ids = 4;
+}
+
+// 사용자의 액션에 대한 정보를 기록
+message UserActionLog {
+    string user_id = 1;
+    ContentType content_type = 2;
+    ContentActionType content_action_type = 3;
+    string content_id = 4;
+    int32 number_of_action = 5;
+}

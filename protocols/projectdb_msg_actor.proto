@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "struct/projectdb_struct_common.proto";
+import "enum/projectdb_enum_rescode.proto";
+
+option java_multiple_files = true;
+option java_package = "com.projectdb.generate.msg.actor";
+option java_outer_classname = "ActorModel";
+
+////////////////////////////////////////////////
+// protocols
+////////////////////////////////////////////////
+
+// 퀘스트정보 요청
+message ReqActorInfo {
+    // server에서 채워주는값.
+    UserInfo user_info = 100; // 사용자정보
+}
+message ResActorInfo {
+    // 응답코드
+    ResponseCode response_code = 10; // 응답코드
+    repeated CharacterInfo character_info = 11; // 캐릭터정보
+    repeated CrewInfo crew_info = 12; // 크루정보
+
+    // server에서 채워주는값.
+    UserInfo user_info = 100; // 사용자정보
+}

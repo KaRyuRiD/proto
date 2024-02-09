@@ -4,24 +4,23 @@ import "struct/projectdb_struct_common.proto";
 import "enum/projectdb_enum_rescode.proto";
 
 option java_multiple_files = true;
-option java_package = "com.projectdb.generate.msg.location";
-option java_outer_classname = "LocationModel";
+option java_package = "com.projectdb.generate.msg.quest";
+option java_outer_classname = "QuestModel";
 
 ////////////////////////////////////////////////
 // protocols
 ////////////////////////////////////////////////
 
-message ReqChangeLocation {
-    // req
-    string user_id = 1;
-    Location location = 2;
-
+// 퀘스트정보 요청
+message ReqQuestInfo {
     // server에서 채워주는값.
     UserInfo user_info = 100; // 사용자정보
 }
-message ResChangeLocation {
-    // res
-    ResponseCode response_code = 1;
+message ResQuestInfo {
+    // 응답코드
+    ResponseCode response_code = 10; // 응답코드
+    repeated QuestInfoGoalBased quest_infos_goal_based = 11; // 퀘스트정보
+    repeated QuestDetailInfoTimeBased quest_infos_time_based = 12; // 퀘스트정보
 
     // server에서 채워주는값.
     UserInfo user_info = 100; // 사용자정보

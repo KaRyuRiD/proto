@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "struct/projectdb_struct_common.proto";
 import "enum/projectdb_enum_rescode.proto";
+import "enum/projectdb_enum_common.proto";
 
 option java_multiple_files = true;
 option java_package = "com.projectdb.generate.msg.stos";
@@ -10,6 +10,13 @@ option java_outer_classname = "ServerToServerModel";
 ////////////////////////////////////////////////
 // protocols
 ////////////////////////////////////////////////
+
+// 서버간에 서로 등록하기 위해서.
+message RegistrySocket {
+    string instance_id = 1; // 유레카쪽에 등록되는 정보
+    string hostname = 2;
+}
+
 
 // 최초 계정 생성 시 사용자 정보를 등록한다.
 // command_stos_newaccountregister
