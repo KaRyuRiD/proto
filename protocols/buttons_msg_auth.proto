@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-import "struct/projectdb_struct_common.proto";
-import "enum/projectdb_enum_rescode.proto";
+import "struct/buttons_struct_common.proto";
+import "enum/buttons_enum_rescode.proto";
 
 option java_multiple_files = true;
-option java_package = "com.projectdb.generate.msg.auth";
+option java_package = "co.buttons.generate.msg.auth";
 option java_outer_classname = "AuthModel";
 
 ////////////////////////////////////////////////

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "enum/buttons_enum_common.proto";
+import "enum/buttons_enum_rescode.proto";
+
+option java_multiple_files = true;
+option java_package = "co.buttons.generate.vo";
+option java_outer_classname = "StructCommonModel";
+
+/////////////
+// error msg
+/////////////
+
+message ErrorMsg {
+    ResponseCode response_code = 1;
+    string error_msg = 2;
+}
+
+////////////////////////////////////////////////
+// vo
+////////////////////////////////////////////////
+
+message Location {
+    int32 x = 1;
+    int32 y = 2;
+}
+
+// 계정타입정보
+message AccountTypeInfo {
+    AccountType account_type = 1;
+    string account_name = 2;
+}
+
+// 계정정보
+message AccountInfo {
+    string user_id = 1; // 유저아이디
+    repeated AccountTypeInfo account_type_infos = 2; // 계정타입정보
+    int64 registry_timemillis = 3; // 계정생성시간
+    string user_name = 4; // 유저이름
+
+    // 
+    string device_id = 10; // 디바이스 아이디
+    int64 last_login_timemillis = 11; // 마지막으로 로그인한 시간
+    int64 heartbeat_timemillis = 12; // 마지막으로 서버에 접속한 시간
+}
+
+// 유저정보
+message UserInfo {
+    string user_id = 1; // 유저아이디
+
+    // 유저정보
+    int32 level = 10;
+}

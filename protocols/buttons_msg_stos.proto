@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-import "enum/projectdb_enum_rescode.proto";
-import "enum/projectdb_enum_common.proto";
+import "enum/buttons_enum_rescode.proto";
+import "enum/buttons_enum_common.proto";
 
 option java_multiple_files = true;
-option java_package = "com.projectdb.generate.msg.stos";
+option java_package = "co.buttons.generate.msg.stos";
 option java_outer_classname = "ServerToServerModel";
 
 ////////////////////////////////////////////////
