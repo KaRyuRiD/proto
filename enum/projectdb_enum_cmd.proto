@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "co.buttons.generate.enumvo";
+option java_package = "com.projectdb.generate.enumvo";
 option java_outer_classname = "EnumCmdModel";
 
 // 프로토콜 메시지 타입 정리
@@ -18,6 +18,18 @@ enum CommandDefinition {
     command_auth_resauthaccountregistry = 103;
     command_auth_reqauthusernamecreate = 104;
     command_auth_resauthusernamecreate = 105;
+
+    // item
+    command_item_reqitemgetiteminfo = 1000;
+    command_item_resitemgetiteminfo = 1001;
+
+    // quest
+    command_quest_reqquestinfo = 2000;
+    command_quest_resquestinfo = 2001;
+
+    // actor
+    command_actor_reqactorinfo = 3000;
+    command_actor_resactorinfo = 3001;
 
     ////////////
     // s to s
